@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>回调函数--指针</title>
+    <script>
+        function KFC(food,eatFunc){
+            alert('您的餐' + food + '准备好了，请取餐');
+            eatFunc();
+        }
+        // function zss(){
+        //     alert('堂食')
+        // }
+        var zss = function(){
+            alert('堂食');
+        }
+
+        KFC('辣堡',zss);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

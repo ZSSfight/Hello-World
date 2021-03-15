@@ -1,0 +1,22 @@
+body{
+    background-image: url("../img/bg.jpg")
+}
+h1{
+    color:deepskyblue;
+    text-align: center;
+}
+h2{
+    color: darkblue;
+    margin-left: 70%;
+}
+p{
+    color:black;
+    text-indent: 32px;
+    font-size: 16px;
+    line-height: 32px;
+}
+img{
+    position: absolute;
+    left: 50%;
+    margin-left: -128px;
+}

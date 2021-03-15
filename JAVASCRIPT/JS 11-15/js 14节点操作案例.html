@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>节点操作案例</title>
+    <style>
+        #wrap{
+            width: 500px;
+            margin: 0 auto;
+        }
+        #div1{
+            width: 500px;
+            height: 100px;
+            background-color: whitesmoke;
+        }
+        #div2{
+            width: 500px;
+            height: 100px;
+            background-color: whitesmoke;
+        }
+        #input1{
+            width: 495px;
+            height: 60px;
+            background-color: deepskyblue;
+            margin-bottom: 5px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        #div1 button{
+            width: 100px;
+            height: 30px;
+            margin-left: 45px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        #div2 div{
+            border-bottom: 1px dashed grey;
+            padding: 5px;
+        }
+    </style>
+    <script src="../tool.js"></script>
+    <script>
+        window.onload = function(){
+            var oDiv1 = document.getElementById("div1");
+            var oDiv2 = document.getElementById("div2");
+            var oInput = document.getElementById("input1");
+
+            var aBtns = document.getElementsByTagName("button");
+
+            aBtns[0].onclick = function(){
+                if (!oInput.value){
+                    alert("请输入内容！");
+                }else{
+                    var newDiv = document.createElement("div");
+                    var oTxt = document.createTextNode(oInput.value);
+                    newDiv.appendChild(oTxt);
+                    newDiv.style.backgroundColor = randomColor();
+
+                    oDiv2.appendChild(newDiv);
+                    oInput.value = " ";
+                }
+            }
+
+            aBtns[1].onclick = function(){
+                if (!oInput.value){
+                    alert("请先输入内容！");
+                }else {
+                    oDiv2.removeChild(oDiv2.lastChild);
+                }
+            }
+
+            aBtns[2].onclick = function(){
+                if (!oInput.value){
+                    alert("请先输入内容！");
+                }else {
+                    var newNode = oDiv2.lastChild.cloneNode(true);
+                    oDiv2.appendChild(newNode);
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="wrap">
+    <div id="div1">
+        <input type="text" id="input1" placeholder="请输入内容"/><br>
+        <button>增加</button>
+        <button>删除</button>
+        <button>拷贝</button>
+    </div>
+    <div id="div2">
+    </div>
+</div>
+</body>
+</html>

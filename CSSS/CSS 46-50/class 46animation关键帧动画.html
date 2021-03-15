@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>animation关键帧动画</title>
+    <style>
+        .box{
+            width: 100%;
+            height: 800px;
+            position: relative;
+        }
+        .demo{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: deepskyblue;
+            border-radius: 50%;
+            animation: move 7s ease 2s infinite;
+        }
+        @keyframes move {
+            0%{left: 100px;}
+            25%{left: 200px;top: 200px;}
+            50%{left: 300px;top: 300px;}
+            75%{left: 340px;top: 200px;}
+            100%{left: 500px;color: pink;}
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="demo"></div>
+</div>
+</body>
+</html>

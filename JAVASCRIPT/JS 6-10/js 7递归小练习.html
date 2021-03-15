@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>递归小练习</title>
+    <script>
+        // 斐波那契数列解决兔子繁殖。一对兔子四个月成熟并产下一对兔子，
+        // 新生兔子同样第四月成熟产下一对，假设兔子无死亡，n（n<=20）个月后有多少对兔子？
+        // function rabbit(n){
+        //     if(n < 4){
+        //         return 1;
+        //     }
+        //     return rabbit(n - 1) + rabbit(n - 3);
+        // }
+        // alert(rabbit(7));
+
+        // 输入一个n，打印n个hello world的运行结果。
+        function print(n){
+            if(n == 0){
+                return ;
+            }
+            document.write("hello world<br/>");
+            return print(n -1) ;
+        }
+
+        alert(print(4));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

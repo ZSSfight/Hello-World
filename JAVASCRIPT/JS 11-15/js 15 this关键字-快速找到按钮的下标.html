@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>this关键字-快速找到按钮的下标</title>
+    <script>
+        window.onload = function(){
+            var aBtns = document.getElementsByTagName("button");
+            for(var i = 0; i < aBtns.length; i++){
+                aBtns[i].index = i;
+                aBtns[i].onclick = function(){
+                    alert(this.index);
+                }
+            }
+            alert("循环已结束：" + i);
+        }
+    </script>
+</head>
+<body>
+<button>按钮1</button>
+<button>按钮2</button>
+<button>按钮3</button>
+</body>
+</html>

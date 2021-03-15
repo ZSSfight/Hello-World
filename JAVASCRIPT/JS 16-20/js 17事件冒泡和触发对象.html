@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>事件冒泡和触发对象</title>
+    <style>
+        div{
+            padding: 30px;
+        }
+        #div1{background-color: grey;}
+        #div2{background-color: lightgreen;}
+        #div3{background-color: deepskyblue;}
+    </style>
+    <script>
+        function stopBubble(e){
+            if(e.stopPropagation()){
+                e.stopPropagation()
+            }else{
+                e.cancelBubble = true;
+            }
+        }
+
+        window.onload = function(){
+            var oDivs = document.getElementsByTagName("div");
+            for(var i = 0; i < oDivs.length; i++){
+                oDivs[i].onclick = function(ev){
+                    var e = ev || window.event;
+                    alert(this.id);
+                    stopBubble(e);
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="div1">
+    <div id="div2">
+        <div id="div3"></div>
+    </div>
+</div>
+</body>
+</html>

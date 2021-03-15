@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>字符串练习2</title>
+    <script>
+        // 例一：将字符串按单词进行排序，空格作为划分条件。传入：“Welcome to Beijing”，返回：“Beijing to Welcome”。
+        // function reserveStr(str){
+        //     var arr = str.split(" ");
+        //     arr.reverse();
+        //     return arr.join(" ");
+        // }
+        // alert(reserveStr("Welcome to Beijing"));
+
+        // 例二：对称数组。传入一个数组，返回新的数组，新数组由原数组元素的正序反序拼成。
+        //     传入：【“one”，“two”，“three”】 返回：【“one”，“two”，“three”，“three”，“two”，“one”】
+        // function symmetry(arr){
+        //     var newArr = arr.concat();
+        //     var reverseArr = arr.reverse();
+        //     newArr.push(reverseArr);
+        //     return newArr;
+        // }
+        // alert(symmetry(["one","two","three"]));
+
+        // function symmetry(arr){
+        //     var newArr = arr.concat();
+        //     for(var i = arr.length - 1; i >= 0; i--){
+        //         newArr.push(arr[i]);
+        //     }
+        //     return newArr;
+        // }
+        // alert(symmetry(["one","two","three"]));
+
+        // 例三：已知一个字符串对象中，单词由字符分隔，统计单词个数。传入：“Yes，she*is@my！love” 返回：5
+        // function isABC(charStr){
+        //     if(charStr >= "a" && charStr <= "z" || charStr >= "A" && charStr <= "Z"){
+        //         return true;
+        //     }else{
+        //         return false;
+        //     }
+        // }
+        // function countWord(str){
+        //     var count = 0;
+        //     for(var i = 0; i < str.length - 1; i++){
+        //         if(isABC(str[i]) && !isABC(str[i + 1])){
+        //             count++;
+        //         }
+        //     }
+        //     return count;
+        // }
+        // alert(countWord("Yes，she*is@my！love"));
+
+        // 例四：已知千峰邮箱用户只能有数字、字母和下划线组成，域名为@1000phone。com。判断一个邮箱是否是千峰邮箱，是返回true，否返回false。
+        //         mail@1000phone.com  正确
+        //         %mail@1000phone.com  错误
+        //         mail@1000phone.comp  错误
+        function isABC(charStr){
+            if(charStr >= "a" && charStr <= "z" || charStr >= "A" && charStr <= "Z" || charStr >= "0" && charStr <= "9" || charStr =="_"){
+                return true;
+            }else{
+                return false;
+            }
+        }
+        function isEmail(email){      <!--查找@的位置 -->
+            var index = email.indexOf("@");
+            if(index = -1){
+                return false;
+            }else{
+                var endStr = email.substring(index);
+                if(endStr != "@1000phone.com"){
+                    return false;
+                }else{
+                    var username = email.substr(0,index);          <!--判断前置是否正确 -->
+                    var isYes = true;
+                    for(var i = 0; i < username.length; i++){
+                        if(!isABC(username[i])){
+                            isYes = false;
+                            break;
+                        }
+                    }
+                    return isYes;
+                }
+            }
+        }
+        alert(isEmail("zss@1000phone.com"));
+    </script>
+</head>
+<body>
+
+</body>
+</html>

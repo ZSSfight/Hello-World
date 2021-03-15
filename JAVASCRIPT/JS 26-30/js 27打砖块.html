@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>打砖块</title>
+    <style>
+        #div1{
+            width: 600px;
+            height: 600px;
+            position: relative;
+            border: 1px black solid;
+            margin: 100px auto;
+        }
+        #ball{
+            width: 20px;
+            height: 20px;
+            border: 1px solid black;
+            border-radius: 50%;
+            position: absolute;
+            bottom: 30px;
+            left: 285px;
+            background-color: pink;
+        }
+        #bat{
+            width: 100px;
+            height: 30px;
+            position: absolute;
+            background-color: deepskyblue;
+            left: 250px;
+            bottom: 0;
+            border: 1px solid black;
+        }
+        #brick div{
+            width: 98px;
+            height: 18px;
+            border: 1px solid black;
+            float: left;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var oDiv = document.getElementById('div1');
+            var oBall = document.getElementById('ball');
+            var oBat = document.getElementById('bat');
+            var oBrick = document.getElementById('brick');
+            var aBricks = oBrick.getElementsByTagName('div');
+
+            dragX(oBat);
+            createBrick(60);
+
+            var speedX = parseInt(Math.random() * 4) + 3;               //随机水平和垂直速度
+            var speedY = - (parseInt(Math.random() * 3) + 4);
+
+            setInterval(function(){
+                oBall.style.left = oBall.offsetLeft + speedX + 'px';        //ball的位移
+                oBall.style.top = oBall.offsetTop + speedY + 'px';
+
+                if(oBall.offsetLeft >= 580 || oBall.offsetLeft <= 0){       //限制出界，反向速度
+                    speedX *= -1;
+                }
+                if(oBall.offsetTop <= 0){
+                    speedY *= -1;
+                }
+                if(oBall.offsetTop >= 580){
+                    alert('GAME OVER');
+                    speedY *= -1;
+                    window.location.reload();
+                }
+                                                                //调用knock碰撞函数
+                if(knock(oBall,oBat)){                          //ball和球拍碰撞--反向速度
+                    speedY *= -1;
+                }
+                for(var i = 0; i < aBricks.length; i++){        //ball和砖块碰撞--反向速度且移除砖块
+                    if(knock(aBricks[i],oBall)){
+                        speedY *= -1;
+                        oBrick.removeChild(aBricks[i]);
+                        break;
+                    }
+                }
+            },30);
+        }
+
+        function dragX(node) {                                          //拖拽（限制出界）--注意事件点击函数
+            node.onmousedown = function (ev) {
+                var e =ev || window.event;
+                var offsetX = e.clientX - node.offsetLeft;
+                document.onmousemove = function (ev) {
+                    var e = ev || window.event;
+                    var l = e.clientX - offsetX;
+                    if(l <= 0){
+                        l = 0;
+                    }
+                    if(l >= 500){
+                        l = 500;
+                    }
+                    node.style.left = l + 'px';
+                }
+            }
+            document.onmouseup = function () {
+                document.onmousemove = null;
+            }
+        }
+
+        function createBrick(n) {                                      //for循环创建砖块、插入、随机颜色
+            var oBrick = document.getElementById('brick');
+            for(var i = 0; i < n; i++){
+                var node = document.createElement('div');
+                node.style.backgroundColor = randomColor();
+                oBrick.appendChild(node);
+            }
+            var aBricks = oBrick.getElementsByTagName('div');
+            for(var i = 0; i < aBricks.length; i++){                        //循环获取砖块相对位置（px）
+                aBricks[i].style.left = aBricks[i].offsetLeft + 'px';       //循环并改变砖块position
+                aBricks[i].style.top = aBricks[i].offsetTop + 'px';
+            }
+            for(var i = 0; i < aBricks.length; i++) {
+                aBricks[i].style.position = 'absolute';
+            }
+        }
+        function randomColor() {                                        //随机颜色
+            var str = "rgba(" + parseInt(Math.random() * 256) + "," + parseInt(Math.random() * 256) + "," + parseInt(Math.random() * 256) + ",1)";
+            return str;
+        }
+
+        function knock(node1,node2){                                    //碰撞检测
+            var l1 = node1.offsetLeft;                                  //左右上下
+            var r1 = node1.offsetLeft + node1.offsetWidth;
+            var t1 = node1.offsetTop;
+            var b1 = node1.offsetTop + node1.offsetHeight;
+
+            var l2 = node2.offsetLeft;
+            var r2 = node2.offsetLeft + node2.offsetWidth;
+            var t2 = node2.offsetTop;
+            var b2 = node2.offsetTop + node2.offsetHeight;
+
+            if(l2 > r1 || r2 < l1 || t2 > b1 || b2 < t1){
+                return false;
+            }else{
+                return true;
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="div1">
+    <div id="ball"></div>
+    <div id="bat"></div>
+    <div id="brick">
+
+    </div>
+</div>
+</body>
+</html>

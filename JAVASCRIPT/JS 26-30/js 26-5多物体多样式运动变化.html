@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>多物体多样式运动变化</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: deepskyblue;
+            margin: 30px;
+            opacity: 0.3;
+            filter: alpha(opacity=30);
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var aDivs = document.getElementsByTagName('div');
+            aDivs[0].onclick = function(){
+                startMove(this,'width',300);
+            }
+            aDivs[1].onclick = function(){
+                startMove(this,'height',300);
+            }
+            aDivs[2].onclick = function(){
+                startMove(this,'marginLeft',300);
+            }
+            aDivs[3].onclick = function(){
+                startMove(this,'fontsize',30);
+            }
+            aDivs[4].onmouseover = function(){
+                startMove(this,'opacity',100);
+            }
+            aDivs[4].onmouseout = function(){
+                startMove(this,'opacity',30);
+            }
+        }
+
+        function startMove(node,attr,target){
+            clearInterval(node.timer);
+            node.timer = setInterval(function(){
+                var iCur = null;
+                if(attr == 'opacity'){
+                    iCur = parseInt(parseFloat(getStyle(node,'opacity')) * 100);
+                }else{
+                    iCur = parseInt(getStyle(node,attr));
+                }
+                var speed = (target - iCur) / 8;
+                speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+                if(target = iCur){
+                    clearInterval(node.timer);
+                }else{
+                    if(attr == 'opacity'){
+                        iCur += speed;
+                        node.style.opacity = iCur / 100;
+                    }else{
+                        node.style[attr] = iCur + speed +'px';
+                    }
+                }
+            },30)
+        }
+
+        function getStyle(node, cssStr){
+            return node.currentStyle ? node.currentStyle[cssStr] : getComputedStyle(node)[cssStr];
+        }
+    </script>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div>文本文字</div>
+    <div></div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>日期对象方法</title>
+    <script>
+        <!--    1、自定义日期输出格式-->
+        // function numOfChinese(num){
+        //     var arr = ["日","一","二","三","四","五","六"];
+        //     return arr[num];
+        // }
+        //
+        // function doubleNum(n){
+        //     if(n < 10){
+        //         return "0" + n;
+        //     }else{
+        //         return n;
+        //     }
+        // }
+        //
+        // function showTimes(){
+        //     var d = new Date();
+        //     var year = d.getFullYear();
+        //     var month = d.getMonth();
+        //     var date = d.getDate();
+        //     var week = d.getDay();
+        //     week = numOfChinese(week);
+        //
+        //     var hour = doubleNum(d.getHours());
+        //     var min = doubleNum(d.getMinutes());
+        //     var sec = doubleNum(d.getSeconds());
+        //
+        //     var str = year + "年" + month + "月" + date + "日" + " " + "星期" + week + " " + hour + ":" + min + ":" + sec;
+        //     return str;
+        // }
+        // showTimes();
+
+        // 2、输入n，输出n天后的时间。
+        function afterOfDate(n){
+            var d = new Date();
+            var day = d.getDate();
+            d.setDate(day + n);
+            return d;
+        }
+        alert(afterOfDate(3));
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

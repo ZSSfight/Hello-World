@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    width: 100%;
+    overflow: hidden;
+}
+.left,.right{
+    float: left;
+    height: 200px;
+    line-height: 200px;
+    position: relative;
+}
+.left{
+    width: 200px;
+    background-color: deepskyblue;
+    margin-right: -100%;
+}
+.right{
+    width: 300px;
+    background-color: lightgreen;
+    margin-left: -300px;
+}
+.content{
+    margin: 0 200px;
+}
+.center{
+    float: left;
+    width: 100%;
+    line-height: 200px;
+    background-color: pink;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>inline-block</title>
+    <style>
+        div{
+            border: 2px dotted black;
+            margin: 1em;
+            padding: 3px;
+        }
+        p{
+
+            border:2px solid deepskyblue;
+        }
+        #block p{
+            width:4em ;
+            display: block;
+        }
+        #inline p{
+            width: 4em;        /*行内元素不可用宽度*/
+            display: inline;
+        }
+        #inline-block p{
+            display: inline-block;
+            width: 4em;
+        }
+    </style>
+</head>
+<body>
+<div id="block">Lorem ipsum dolor sit amet, <p>我自横刀向天笑。</p>consectetur adipisicing elit. Atque blanditiis consequuntur debitis, dolorum eligendi ipsam laboriosam libero magnam molestias nam natus nemo pariatur quaerat quos reiciendis tenetur vel vero voluptatum?</div>
+<div id="inline">Lorem ipsum dolor sit amet, <p>我自横刀向天笑。</p>consectetur adipisicing elit. Atque blanditiis consequuntur debitis, dolorum eligendi ipsam laboriosam libero magnam molestias nam natus nemo pariatur quaerat quos reiciendis tenetur vel vero voluptatum?</div>
+<div id="inline-block">Lorem ipsum dolor sit amet, <p>我自横刀向天笑。</p>consectetur adipisicing elit. Atque blanditiis consequuntur debitis, dolorum eligendi ipsam laboriosam libero magnam molestias nam natus nemo pariatur quaerat quos reiciendis tenetur vel vero voluptatum?</div>
+</body>
+</html>

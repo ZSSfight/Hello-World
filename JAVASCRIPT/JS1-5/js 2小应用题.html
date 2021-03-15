@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>小应用题</title>
+    <script>
+        // 月薪10k，每年涨幅是前一年的5%，求50年后月新多少？
+        var money = 10000;
+        var count = 0;
+        while(count < 50){
+            money = money + money * 0.05;
+            count++;
+        }
+            alert(money);
+
+        // var total = 89;
+        // day = parseInt(total / 24);
+        // hour = total % 24;
+        // alert("一共花了" + day + "天零" + hour +"小时");
+
+        // var hsd = 80;
+        // var shd = parseInt(5 / 9.0 * (hsd - 32));
+        // alert("华氏度为" + hsd + "，摄氏度为" + shd);
+
+        // var number = 789;
+        // var first = parseInt(number / 100);
+        // var second = parseInt( [number - 100 * first] / 10);
+        // var third = number - 100 * first - 10 * second;
+        //
+        // alert("百位数是" + first + "，十位数是" + second + "，个位数是" + third);
+
+        // var number = 345;
+        // var a = number % 10;
+        // var b = parseInt(number / 10) % 10;
+        // var c = parseInt(number / 100);
+        // alert("百位数是" + c + "，十位数是" + b + "，个位数是" + a);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

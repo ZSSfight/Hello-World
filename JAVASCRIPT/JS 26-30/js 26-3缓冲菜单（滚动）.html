@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>滚动菜单固定</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            height: 3000px;
+        }
+        #div1{
+            width: 100px;
+            height: 300px;
+            position: absolute;
+            background-color: lightblue;
+            right: 0;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var oDiv = document.getElementById('div1');
+            var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            var windowHeight = document.documentElement.clientHeight || document.body.clientHeight;
+            var iH = parseInt(scrollTop + (windowHeight - oDiv.offsetHeight) / 2);
+            startMove(iH);
+        }
+        window.onscroll = function(){
+            var oDiv = document.getElementById('div1');
+            var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            var windowHeight = document.documentElement.clientHeight || document.body.clientHeight;
+            var iH = parseInt(scrollTop + (windowHeight - oDiv.offsetHeight) / 2);
+            startMove(iH);
+        }
+        window.onresize = function(){
+            var oDiv = document.getElementById('div1');
+            var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            var windowHeight = document.documentElement.clientHeight || document.body.clientHeight;
+            var iH = parseInt(scrollTop + (windowHeight - oDiv.offsetHeight) / 2);
+            startMove(iH);
+        }
+
+        var timer = null;
+        function startMove(target){
+            var oDiv = document.getElementById('div1');
+            clearInterval(timer);
+            timer = setInterval(function(){
+                var speed = (target - oDiv.offsetTop) / 8;
+                speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+                if(oDiv.offsetTop == target){
+                    clearInterval(timer);
+                }else{
+                    oDiv.style.top = oDiv.offsetTop + speed  + 'px';
+                }
+            },30)
+        }
+    </script>
+</head>
+<body>
+<div id="div1"></div>
+</body>
+</html>

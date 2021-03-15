@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>多物体运动</title>
+    <style>
+        div{
+            width: 100px;
+            height: 70px;
+            background-color: deepskyblue;
+            margin: 30px;
+        }
+    </style>
+    <script>
+        window.onload =function (){
+            var aDivs = document.getElementsByTagName('div');
+            for(var i = 0; i < aDivs.length; i++){
+                aDivs[i].onmouseover =function(){
+                    startMove(this,300);
+                }
+                aDivs[i].onmouseout = function () {
+                    startMove(this,100);
+                }
+            }
+        }
+        function startMove(node,target) {
+            clearInterval(node.timer);
+            node.timer = setInterval(function(){
+                var speed = (target - node.offsetWidth) / 8;
+                speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+                if(node.offsetWidth == target){
+                    clearInterval(node.timer);
+                }else{
+                    node.style.width = node.offsetWidth + speed + 'px';
+                }
+            },30);
+        }
+    </script>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+</html>

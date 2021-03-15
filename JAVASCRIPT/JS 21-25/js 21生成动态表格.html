@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>生成动态表格</title>
+    <style>
+        #t1 tr td{
+            width: 100px;
+            height: 30px;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            var oRow = document.getElementById('row');
+            var oCol = document.getElementById('col');
+            var oBtn1 = document.getElementById('btn1');
+            var oT1 = document.getElementById('t1');
+
+            oBtn1.onclick = function () {
+                if (!oRow.value || !oCol.value) {
+                    alert('请输入行列');
+                } else {
+                    for (var i = 0; i < oRow.value; i++) {
+                        var oTr = document.createElement('tr');
+                        for (var j = 0; j < oCol.value; j++) {
+                            var oTd = document.createElement('td');
+                            oTr.appendChild(oTd);
+                        }
+                        oT1.appendChild(oTr);
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<input type="text" id="row" placeholder="行">
+<input type="text" id="col" placeholder="列">
+<button id="btn1">生成</button>
+<table id="t1" border="1"></table>
+</body>
+</html>

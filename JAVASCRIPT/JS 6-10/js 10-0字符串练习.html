@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>字符串练习</title>
+    <script>
+        // 例1：将字符串str=“when i was young, i love a girl in neighbour class.” 从young提取到girl，并生成新字符串。
+        // var str = "when i was young, i love a girl in neighbour class.";
+        // var start = str.indexOf("young");
+        // var end = str.indexOf("girl") + "girl".length;
+        // var newStr = str.substring(start,end);
+        // document.write(newStr);
+
+        // 例2：将字符串用空格隔开。每个单词用空格隔开，只有首单词首字母大写。传入：HelloMyWorld  返回：Hello my world。
+        // function wordOfStr(str){
+        //     var arr = str.split("");
+        //     for(var i = 0; i < arr.length; i++){
+        //         if(arr[i] >= "A" && arr[i] <= "Z"){
+        //             arr[i] = arr[i].toLowerCase();
+        //             arr.splice(i, 0, " ");
+        //         }
+        //     }
+        //     return arr.join("");
+        // }
+        // var str = wordOfStr("HelloMyWorld");
+        // alert(str);
+
+        // 数字验证码
+        // function numTestCode(n){
+        //     var arr = [];
+        //     for(var i = 0; i < n; i++){
+        //         var num = parseInt(Math.random() * 10);
+        //         arr.push(num);
+        //     }
+        //     return arr.join("");
+        // }
+        // alert(numTestCode(7));
+
+        // 数字/大小写字母混合验证码
+        function testCode(n){
+            var arr = [];
+            for(var i = 0; i < n; i++){
+                var num = parseInt(Math.random() * 123);
+                if(num >= 0 && num <= 9){
+                    arr.push(num);
+                }else if(num >= 65 && num <= 90 || num >= 97 && num <= 122){
+                    arr.push(String.fromCharCode(num));
+                }else{
+                    i--;
+                }
+            }
+            return arr.join("");
+        }
+        alert(testCode(6));
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

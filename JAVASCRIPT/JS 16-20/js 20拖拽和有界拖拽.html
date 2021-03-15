@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>拖拽和有界拖拽</title>
+    <style>
+        #div1{
+            width: 130px;
+            height: 130px;
+            background-color: grey;
+            position: absolute;
+        }
+        #div2{
+            width: 130px;
+            height: 130px;
+            background-color: deepskyblue;
+            position: absolute;
+            left: 400px;
+        }
+    </style>
+    <script src="../tool.js"></script>
+    <script>
+        window.onload = function (){
+            var oDiv1 = document.getElementById('div1');
+            var oDiv2 = document.getElementById('div2');
+            drag(oDiv1);
+            limitDrag(oDiv2);
+        }
+
+        // function drag(node){
+        //     node.onmousedown = function (ev){
+        //         var e = ev || window.event;
+        //         var offsetX = e.clientX - node.offsetLeft;
+        //         var offsetY = e.clientY - node.offsetTop;
+        //
+        //         document.onmousemove = function(ev){
+        //             var e = ev || window.event;
+        //             node.style.left = e.clientX - offsetX + 'px';
+        //             node.style.top = e.clientY - offsetY + 'px';
+        //         }
+        //     }
+        //     document.onmouseup = function (){
+        //         document.onmousemove = null;
+        //     }
+        // }
+        //
+        // function limitDrag(node){
+        //     node.onmousedown = function(ev){
+        //         var e = ev || window.event;
+        //         var offsetX = e.clientX - node.offsetLeft;
+        //         var offsetY = e.clientY - node.offsetTop;
+        //
+        //         document.onmousemove = function (ev){
+        //             var e = ev || window.event;
+        //             var l = e.clientX - offsetX;
+        //             var t= e.clientY - offsetY;
+        //
+        //             if(l <= 0){
+        //                 l = 0;
+        //             }
+        //             var windowWidth = document.documentElement.clientWidth || document.body.clientWidth;
+        //             if(l >= windowWidth - node.offsetWidth){
+        //                 l = windowWidth - node.offsetWidth;
+        //             }
+        //
+        //             if(t <= 0){
+        //                 t = 0;
+        //             }
+        //             var windowHeight = document.documentElement.clientHeight || document.body.clientHeight;
+        //             if(l >= windowHeight - node.offsetHeight){
+        //                 t = windowHeight - node.offsetHeight;
+        //             }
+        //             node.style.left = l + 'px';
+        //             node.style.top = t + 'px';
+        //         }
+        //     }
+        //     document.onmouseup = function (){
+        //         document.onmousemove = null;
+        //     }
+        // }
+    </script>
+</head>
+<body>
+<div id="div1"></div>
+<div id="div2"></div>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>表单验证和密码强度（正则）</title>
+    <style>
+        #div1{
+            width: 300px;
+            height: 600px;
+            margin: 100px auto;
+            background-image: url("../../img/蓝天竖背景.JPG");
+            background-size: 300px 600px;
+            overflow: hidden;
+            text-align: center;
+        }
+        #title{
+            margin-top: 30px;
+            font-size: 30px;
+        }
+        #username{
+            width: 200px;
+            height: 20px;
+            margin-top: 50px;
+        }
+        #username_span{
+            font-size: 13px;
+        }
+        #secret{
+            width: 200px;
+            height: 20px;
+            margin-left: 45px;
+            margin-top: 30px;
+            display: block;
+        }
+        #div1 div{
+            float: left;
+            margin-left: 60px;
+            margin-top: 3px;
+            background-color: lightblue;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var oUsername = document.getElementById('username');
+            var oUsername_span =document.getElementById('username_span');
+            var oDiv = document.getElementById('div1');
+            var aDivs = oDiv.getElementsByClassName('testcode');
+            var oPassword = document.getElementById('password');
+
+            oUsername.onblur = function (){
+                var oValue = oUsername.value;
+                if(oValue.length < 6 || oValue.length > 18){
+                    oUsername_span.innerHTML = '用户名长度在6-18位';
+                    oUsername_span.style.color = 'red';
+
+                }else if(!/[a-zA-Z]/.test(oValue[0])){
+                    oUsername_span.innerHTML = '字母开头!';
+                    oUsername_span.style.color = 'red';
+
+                }else if(/\W/.test(oValue)){
+                    oUsername_span.innerHTML = '字母数字下划线组成';
+                    oUsername_span.style.color = 'red';
+
+                }else{
+                    oUsername_span.innerHTML = '可注册！';
+                    oUsername_span.style.color = 'green';
+                }
+            }
+
+            oPassword.onkeyup = function (){
+                var oValue = oPassword.value;
+                for(var i = 0; i < aDivs.length; i++){
+                    aDivs[i].style.backgroundColor = 'lightblue';
+                }
+                if(oValue.length >= 6){
+                    if(/^\d+$/.test(oValue) || /^[a-z]+$/.test(oValue) || /^[A-Z]+$/.test(oValue)){
+                        aDivs[0].style.backgroundColor = 'red';
+                    }else if(/\d/.test(oValue) && /[a-z]/.test(oValue) && /[A-Z]/.test(oValue)){
+                        aDivs[2].style.backgroundColor = 'green';
+                    }else{
+                        aDivs[1].style.backgroundColor = 'orange';
+                    }
+                }
+            }
+        }
+
+    </script>
+</head>
+<body>
+<div id="div1">
+    <span id="title">用户注册</span>
+    <input type="text" id="username" placeholder="用户名"><br>
+    <span id="username_span">用户名由数字字母下划线组成</span><br>
+    <input type="text" id="password" placeholder="密码">
+    <div class="testcode">弱</div>
+    <div class="testcode">中</div>
+    <div class="testcode">强</div>
+</div>
+</body>
+</html>

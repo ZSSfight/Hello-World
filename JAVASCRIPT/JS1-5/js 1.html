@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js基本</title>
+</head>
+<body>
+    <h1>whar to buy?</h1>
+    <p title="do not forget this stuff">A gentle reminder</p >
+    <ul id="purchases">
+        <li>cup</li>
+        <li class="sales">milk</li>
+        <li class="sales important">food</li>
+    </ul>
+<script>
+    // var beatles = [mn,ss,zss,qmn];-->
+    //     // for (var count = 0; count < beatles.length; count++){-->
+    //         alert(beatles);-->
+    //    -->
+
+
+    var shopping = document.getElementById("purchases");
+    var first = shopping.getElementsByClassName("sales");
+    for(var i = 0;i < first.length; i++){
+        alert(first[i]);
+    }
+</script>
+</body>
+</html>

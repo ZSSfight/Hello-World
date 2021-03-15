@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>节点操作</title>
+<!--    1、createChildElement()-->
+<!--        参数：标签名-->
+<!--        返回值：创建此节点-->
+
+<!--    2、createTextNode()-->
+<!--        格式：document.createTextNode-->
+<!--        功能：创建文本节点（纯文本）-->
+<!--    -->
+<!--    3、appendChild()-->
+<!--        格式：node1.appendChild(node2)-->
+<!--        功能：将node2插入到node1的子节点的末尾-->
+<!--    -->
+<!--    4、insertBefore()-->
+<!--        格式：box1.parentNode.insertBefore(box2,box1)-->
+<!--        功能：将box2添加到box1前面-->
+<!--    -->
+<!--    5、replaceChild()-->
+<!--        格式：box1.parentNode.replaceChild(box2,box1)-->
+<!--        功能：用box2节点替换box1-->
+<!--    -->
+<!--    6、cloneNode()-->
+<!--        格式1：node.cloneNode()        格式2：node.cloneNode(true)-->
+<!--        功能：克隆出新节点（本身）         功能：克隆本身及子节点-->
+
+    <script>
+        window.onload = function(){
+            var oBtn = document.getElementById("btn");
+            var oDiv = document.getElementById("div1");
+            oBtn.onclick = function(){
+                var oP = document.createElement("p");
+                var oTxt = document.createTextNode("<h1>hello world</h1>");
+                oP.appendChild(oTxt);
+
+                oDiv.appendChild(oP);
+            }
+        }
+
+    </script>
+</head>
+<body>
+<div id="div1">
+    <em>em</em>
+    div文本
+    <strong>strong</strong>
+</div>
+<button id="btn">节点操作</button>
+</body>
+</html>

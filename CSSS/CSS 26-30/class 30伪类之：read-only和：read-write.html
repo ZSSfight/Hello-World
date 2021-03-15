@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>：raed-only和：read-write</title>
+    <style>
+        input:read-only{
+            background-color: antiquewhite;
+            color: blue;
+        }
+
+        input:read-write {
+            background-color: cyan;
+        }
+        </style>
+</head>
+<body>
+<p>普通的input元素：<input type="text" value="随便写"></p>
+<p>只读的input元素：<input readonly type="text" value="nono"></p>
+<br><br>
+<button type="reset">重置</button>
+<button type="submit">提交</button>
+</body>
+</html>

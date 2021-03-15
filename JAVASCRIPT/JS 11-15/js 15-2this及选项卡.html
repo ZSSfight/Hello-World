@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>this及选项卡</title>
+    <style>
+        #div1 button{
+            width: 100px;
+            height: 37px;
+            background-color: grey;
+            font-size: 20px;
+        }
+        #div1 div{
+            border: 1px solid black;
+            width: 306px;
+            height: 300px;
+            background-color: lightgreen;
+            display: none;
+        }
+        #div1 .active{
+            background-color: deepskyblue;
+            color: black;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var oDiv = document.getElementById("div1");
+            var oBtns = oDiv.getElementsByTagName("button");
+            var oDivs = oDiv.getElementsByTagName("div");
+            for(var i = 0; i < oBtns.length; i++){
+                oBtns[i].index = i;
+                oBtns[i].onclick = function(){
+                    for(var j = 0; j < oBtns.length; j++){
+                        oBtns[j].className = " ";
+                        oDivs[j].style.display = "none";
+                    }
+                    oDivs[this.index].style.display = "block";
+                    this.className = "active";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="div1">
+    <button class="active">first</button>
+    <button>second</button>
+    <button>third</button>
+    <div style="display: block">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci et exercitationem illo ipsum nesciunt perferendis quas! Accusantium atque cumque doloremque, est incidunt nemo optio quisquam reiciendis rerum tenetur. Sapiente, totam.</div>
+    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, assumenda eum ex impedit in itaque iusto nihil quas ullam velit. Autem cumque dolorem doloribus ducimus fugiat fugit minima quasi reiciendis.</div>
+    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti doloribus earum maiores minima molestias nisi officia quasi repellat repellendus vel voluptas, voluptatem voluptatum. Aspernatur eligendi facilis fuga iste quam quod?</div>
+</div>
+</body>
+</html>

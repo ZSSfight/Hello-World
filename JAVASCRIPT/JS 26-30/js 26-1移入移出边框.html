@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>移入移出边框</title>
+    <style>
+        #div1{
+            width: 100px;
+            height: 400px;
+            position: absolute;
+            background-color: grey;
+            left: -90px;
+            top: 400px;
+        }
+        #div1 span{
+            width: 20px;
+            height: 70px;
+            position: absolute;
+            background-color: deepskyblue;
+            left: 100px;
+            top: 100px;
+            line-height: 20px;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var oDiv = document.getElementById('div1');
+            oDiv.onmousemove = function (){
+            startMove(0);
+        }
+            oDiv.onmouseout = function (){
+                startMove(-90);
+            }
+        }
+        var timer = null;
+        function startMove(target){
+            var oDiv =document.getElementById('div1');
+            var speed = 10;
+            if(target > oDiv.offsetLeft){
+                speed = Math.abs(speed);
+            }else{
+                speed = -Math.abs(speed);
+            }
+
+            clearInterval(timer);
+            timer = setInterval(function(){
+                if(oDiv.offsetLeft == target){
+                    clearInterval(timer);
+                }else{
+                    oDiv.style.left = oDiv.offsetLeft + speed +'px';
+                }
+            },20)
+        }
+    </script>
+</head>
+<body>
+<div id="div1">
+    <span>分享到</span>
+</div>
+</body>
+</html>

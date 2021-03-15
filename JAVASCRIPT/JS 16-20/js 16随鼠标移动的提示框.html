@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>随鼠标移动的提示框</title>
+    <style>
+        a{
+            display: block;
+            color: deepskyblue;
+            width: 300px;
+            font-size: 37px;
+            margin: 100px;
+        }
+        #msg{
+            display: none;
+            background-color: lightpink;
+            width: 300px;
+            height: 200px;
+            position: absolute;
+        }
+    </style>
+    <script>
+        var arr = ["zss,1996-12-10,男，江苏徐州人","qmn，2000-10-19，女，四川自贡人","？？？，？，？？？，？，父亲：zss；母亲：qmn"];
+        window.onload = function(){
+            var oAs = document.getElementsByTagName("a");
+            var msg = document.getElementById("msg");
+            for(var i = 0; i < oAs.length; i++){
+                oAs[i].index = i;
+                oAs[i].onmouseover = function(){
+                    msg.innerHTML = arr[this.index];
+                    msg.style.display = "block";
+                }
+
+                oAs[i].onmouseout = function(){
+                    msg.style.display = "none";
+                }
+
+                oAs[i].onmousemove = function(ev){
+                    var e = ev || window.event;
+                    msg.style.left = e.clientX + 17 + "px";
+                    msg.style.top = e.clientY + 17 + "px";
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<a href="#">张闪闪</a>
+<a href="#">邱蒙娜</a>
+<a href="#">together</a>
+<div id="msg"></div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>数组练习</title>
+    <script>
+        // 判断一个五位以内的数，每位的数字是什么并用数组输出。
+        // function countNum(num){
+        //     var arr = [];
+        //     while(num){
+        //         arr.push(num % 10);
+        //         num = parseInt(num / 10);
+        //     }
+        //     arr.reverse();
+        //     alert("这是一个" + arr.length + "位数" + "，每位是" + arr);
+        // }
+        // countNum(98765);
+        // alert(arr);
+
+        // function countNum(num){
+        //     var arr = [];
+        //     while(num){
+        //         arr.unshift(num % 10);
+        //         num = parseInt(num / 10);
+        //     }
+        //     var str = arr.join("、");
+        //     alert("这是一个" + arr.length + "位数，" + "每位是：" + str);
+        // }
+        // countNum(45678);
+
+        // function has(arr,item){
+        //     for(i = 0; i < arr.length; i++){
+        //         if(arr[i] = item){
+        //             return true;
+        //         }
+        //         return false;
+        //     }
+        // }
+        // alert(has([10,20,40,60], 60));
+
+        // 生成第十三位校验码：
+        function ean13(num){
+            var arr = [];
+            var odd = 0;
+            var even = 0;
+            while(num){
+                arr.unshift(num % 10);
+                num = parseInt(num / 10);
+            }
+            for( var i = 0; i < arr.length; i++){
+                if(i % 2 == 0){
+                    odd += arr[i];
+                }else{
+                    even += arr[i];
+                }
+            }
+
+            var sum = (odd + even * 3) % 10;
+            if(sum){
+                sum = 10 - sum;
+            }
+
+            arr.push(sum);
+            return Number(arr.join(""));
+        }
+        alert(ean13(692223361219));
+    </script>
+</head>
+<body>
+</body>
+</html>

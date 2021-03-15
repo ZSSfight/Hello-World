@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    overflow: hidden;
+    width: 100%;
+}
+.left{
+    float: left;
+    width: 300px;
+    background-color: deepskyblue;
+    height: 200px;
+    margin-right: -300px;
+    position: relative;
+}
+.right{
+    float: left;
+    width: 100%;
+    height: 200px;
+    background-color: pink;
+    margin-left: 300px;
+}

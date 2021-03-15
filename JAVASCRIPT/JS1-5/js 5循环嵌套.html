@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>循环嵌套</title>
+    <script>
+        // 打印三角形
+        // for(var i = 1; i <= 5; i++){
+        //     for(var j = 1; j <= i; j++) {
+        //         document.write("○");
+        //     }
+        //         document.write("<br/>");
+        // }
+
+        // 打印靠右三角形
+        // for(var i = 1; i <= 5; i++){
+        //     for(var j = 1; j <= 5 - i; j++) {
+        //         document.write("&ensp;&nbsp;");
+        //     }
+        //         for( var k = 1; k <= i; k++){
+        //             document.write("○");
+        //         }
+        //     document.write("<br/>")
+        // }
+
+        // 打印九九乘法表
+        for(var i = 1; i <= 9; i++){
+            for(var j = 1; j <= i; j++){
+                document.write(j + "X" + i + "=" + (i * j) + "&nbsp;");
+            }
+            document.write("<br/>");
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="welcome.php" method="post" enctype="multipart/form-data">
+    <label>邮箱：<input type="email" name="email" placeholder="仅限126、163邮箱" pattern="\w[-\w.+]*@(163.com\126.com)" required></label>
+    <br><br>
+    <label>号码：<input type="tel" name="tel" placeholder="仅限座机和手机号码" pattern="0?(13|14|15|17|18|19)[0-9]{9}" required></label>
+    <br><br>
+    <label>网址：<input type="url" name="url" placeholder="仅限以http和https开头的网址" pattern="^((https|http)?:\/\/)[^\s]+" required="30" list="urllist"></label>
+    <br><br>
+    <input type="submit" value="提交">
+
+    <datalist id="urllist">
+        <option value="https://ilovefishc.com">鱼C主页</option>
+        <option value="https://fishc.com.cn">鱼C论坛</option>
+        <option value="https://fishc.taobao.com">支持小甲鱼</option>
+    </datalist>
+</form>
+</body>
+</html>

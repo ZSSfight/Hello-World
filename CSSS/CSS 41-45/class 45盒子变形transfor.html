@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>盒子变形transform</title>
+    <style>
+        .one{
+            width: 200px;
+            height: 200px;
+            background-color: deepskyblue;
+            transform: translate(100px,190px);
+            -webkit-transform: translate(100px,190px);
+        }
+        #two{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            margin: 0 auto;
+            transform: scale(2);
+            -webkit-transform: scale(0.5);
+        }
+        #three{
+            width: 200px;
+            height: 200px;
+            background-color: deepskyblue;
+            margin: 200px auto;
+            transform: rotateY(45deg);
+        }
+        #four{
+            width: 100px;
+            height: 100px;
+            background-color: deepskyblue;
+            margin-right: 200px;
+            transform: skew(30deg);
+            -webkit-transform: skew(30deg);
+        }
+    </style>
+</head>
+<body>
+<div class="one">translate移动</div>
+<div id="two">scale放缩</div>
+<div id="three">rotate旋转</div>
+<div id="four">skew扭曲</div>
+</body>
+</html>

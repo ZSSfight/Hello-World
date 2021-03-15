@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>定时修改样式</title>
+    <style>
+        #div1 {
+            width: 500px;
+            height: 300px;
+            border: 1px solid black;
+            font-size: 17px;
+            margin: 100px auto;
+            text-align: center;
+            line-height: 200px;
+        }
+    </style>
+    <script>
+        function getStyle(node,cssStyle){
+            return node.currentStyle ? node.currentStyle[cssStyle] : getComputedStyle(node)[cssStyle];
+        }
+
+        function randomColor(){
+            var str = "rgba("+ parseInt(Math.random() * 256) +" , "+ parseInt(Math.random() * 256) +" ,"+ parseInt(Math.random() * 256) +" , 1)";
+            return str;
+        }
+
+        window.onload = function(){
+            var oDiv = document.getElementById("div1");
+            var speed = 5;
+            var count = 0;
+            setInterval(function (){
+                oDiv.style.color = randomColor();
+                var iCur = parseInt(getStyle(oDiv,"fontSize"));
+                oDiv.style.fontSize = iCur + speed + "px";
+                count++;
+                if(count % 6 == 0 ){
+                    speed *= -1;
+                }
+            },1000)
+        }
+    </script>
+</head>
+<body>
+<div id="div1">
+    这个文本！
+</div>
+</body>
+</html>

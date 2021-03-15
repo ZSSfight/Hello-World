@@ -1,0 +1,153 @@
+@font-face {
+    font-family: droidSans;
+    src: url("../font/DroidSans.ttf") format("TrueType");
+}
+@font-face {
+    font-family: economicabold;
+    src: url("../font/Economica-Bold-OTF.otf") format("OpenType");
+}
+@font-face {
+    font-family: economica;
+    src: url("../font/Economica-Regular-OTF.otf") format("OpenType");
+}
+@font-face {
+    font-family: bebas;
+    src: url("../font/BEBAS___.ttf") format("TrueType");
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: url("../img/eximg/tbg.png") repeat;
+    font: 14px droidSans;
+}
+li{
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+}
+.container{
+    width: 100%;
+    margin: 0 auto;
+}
+header{
+    margin: 20px 0;
+}
+nav{
+    background: white;
+    border-radius: 15px;
+    box-shadow: 3px 3px 5px black;
+    margin-top: 20px;
+}
+nav ul{
+    display: flex;
+    justify-content: flex-start;
+    padding: 10px;
+}
+nav ul li{
+    padding: 10px 15px;
+}
+nav li a{
+    color: #666666;
+}
+nav li a:hover{
+    color: black;
+}
+main{
+    background: white;
+    border-radius: 15px;
+    box-shadow: 3px 3px 5px black;
+    padding: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+main img{
+    float: right;
+}
+.main{
+    border: 2px solid lightgrey;
+    border-top: none;
+    margin: 10px;
+    overflow: hidden;
+}
+.main h1{
+    font: 66px economicabold;
+    margin: 70px 0 0 50px;
+}
+.main p{
+    font: 30px economicabold;
+    margin: 70px 0 50px 50px;
+}
+.main a{
+    color: black;
+    font: 18px bebas;
+    margin: 70px 0 0 50px;
+    border: 7px solid black;
+    border-radius: 30px;
+    padding: 15px;
+    word-spacing: 5px; /*字间距*/
+}
+.left {
+    padding: 10px;
+    float: left;
+    overflow: hidden;
+}
+article{
+    float: left;
+    width: 20%;
+    margin: 10px 20px 10px 0;
+    opacity: 0.5;
+}
+.left img{
+    width: 30%;
+    margin-bottom: 15px;
+}
+.left h3{
+    font-size: 20px;
+    text-align: center;
+    margin: 15px;
+}
+.left p{
+    text-align: center;
+    line-height: 1.5em;
+    word-spacing: 3px;
+}
+article:hover{
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+.right{
+    width: 20%;
+    float: right;
+    margin: 10px 10px 10px -5px;
+    border: 1px solid grey;
+    border-radius: 10px;
+    background: lightgrey;
+}
+.right h1{
+    background: black;
+    color: white;
+    font-size: 25px;
+    font-weight: normal;
+    padding: 10px 0 5px 15px;
+}
+.right ul{
+    margin-left: 15px;
+}
+.right ul li{
+    list-style-type: disc;
+    margin-left: 10px;
+    padding: 10px 0 10px 0;
+    line-height: 2em;
+    word-spacing: 5px;
+    font: 20px droidSans;
+    font-weight: normal;
+}
+.right li a{
+    color: grey;
+}
+.right li a:hover{
+    color: black;
+}

@@ -1,0 +1,94 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: url("../img/eximg/siteBackground.jpg");
+    font-family: Belgrano, serif;
+    font-size: 14px;
+
+}
+li{
+    list-style-type: none;
+}
+li a{
+    text-decoration: none;
+}
+.container{
+    width: 1200px;
+    margin: 0 auto;
+    background: url("../img/eximg/siteBackground.jpg");
+    overflow: hidden;
+}
+aside{
+    width: 400px;
+    float: left;
+}
+.logo{
+    background: url("../img/eximg/logoBackground.png") no-repeat;
+    width: 230px;
+    height: 230px;
+}
+.logo h1{
+    font-size: 70px;
+    line-height: 70px;
+    padding: 23px 0 0 40px;
+    text-shadow: 1px 1px 2px whitesmoke;
+    font-family: Lobster, sans-serif;
+}
+nav{
+    margin: 0 0 20px 70px;
+}
+nav li{
+    font-size: 30px;
+    text-shadow: 1px 1px 1px white;
+}
+nav li a{
+    color: #ffa200;
+}
+nav li a:hover{
+    color: #ff3c00;
+}
+li.active{
+    color: #ff3c00;
+}
+audio{
+    outline: none;
+}
+embed{
+    width: 777px;
+    height: 400px;
+}
+.content{
+    width: 770px;
+    float: left;
+    overflow: hidden;
+}
+.character{
+    width: 230px;
+    display: inline-block;
+    margin: 0 5px;
+}
+video{
+    width: 220px;
+}
+h2{
+    font-size: 30px;
+    color: #ff6f00;
+    margin: 10px 0 10px 0;
+}
+h3{
+    margin: 10px 0 30px 0;
+}
+.uper{
+    overflow: hidden;
+    border-bottom: 3px solid #ff4800;
+    padding-bottom: 20px;
+}
+footer{
+    padding: 15px 0;
+}
+footer p{
+    width: 800px;
+    margin: 0 auto;
+}

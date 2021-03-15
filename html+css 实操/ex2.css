@@ -1,0 +1,60 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-family: 微软雅黑;
+}
+.wrap{
+    width: 777px;
+    background-color: lightyellow;
+    border: 1px solid grey;
+    border-top: 10px solid grey;
+    text-indent: 2em;
+    padding: 10px;
+    margin: 10px auto;
+    line-height: 1.5em;
+}
+h1{
+    text-align: center;
+    margin: 20px;
+}
+.pre{
+    background-color: white;
+    font-size: 14px;
+    border: 1px solid grey;
+    margin: 10px;
+    padding: 10px;
+    text-indent: 0;
+    line-height: 1.5em;
+}
+.pre:first-letter{
+    font-size: 24px;
+    font-weight: bold;
+}
+ul{
+    text-indent: 0;
+    font-size: 12px;
+    list-style-type: none;
+    margin: 10px;
+}
+li.leader{
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
+p{
+    margin: 10px;
+    line-height: 1.5em;
+}
+.italic{
+    font-style: italic;
+    font-size: 15.7px;
+    font-weight: bold;
+}

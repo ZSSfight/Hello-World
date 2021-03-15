@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>敏感词过滤</title>
+    <style>
+        #msg{
+            border: 3px deepskyblue solid;
+            width: 300px;
+            height: 100px;
+            margin-top: 5px;
+        }
+    </style>
+    <script>
+        var arr = [/tmd/ig,/nm/ig,/日/ig];
+        function btnClick(){
+            var oText = document.getElementById("text1");
+            var oMsg = document.getElementById("msg");
+            var oValue = oText.value;
+            for(var i = 0; i < arr.length; i++){
+             oValue = oValue.replace(arr[i],"*");
+            }
+             oMsg.innerHTML = oValue;
+             oText.value = " ";
+        }
+
+    </script>
+</head>
+<body>
+<textarea name="" id="text1" cols="30" rows="10"></textarea>
+<br/>
+<button onclick="btnClick();">gogo！</button>
+<div id="msg"></div>
+</body>
+</html>

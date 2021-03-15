@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+.wrap{
+    width: 1000px;
+    border: 1px solid grey;
+    margin: 10px auto;
+}
+.nav{
+    background-image: url("../img/navbg.png");
+}
+.nav ul{
+    list-style-type: none;
+}
+.nav ul li{
+    line-height: 33px;
+    font-weight: bold;
+    display: inline-block;
+    color: whitesmoke;
+    margin-left: 30px;
+}
+.nav a{
+    color: whitesmoke;
+    font-weight: bold;
+}
+.content{
+    overflow: hidden;
+}
+.main{
+    float: left;
+    width: 677px;
+    padding: 10px;
+    border-right: 2px dotted grey;
+}
+h1{
+    text-indent: 28px;
+    font-size: 30px;
+}
+p{
+    text-indent: 2em;
+    line-height: 1.5em;
+}
+h5{
+    font-size: 20px;
+    background-image: url("../img/navbg.png");
+}
+.asidebar{
+    float: right;
+    width: 270px;
+    margin: 80px 0 0 10px;
+}
+.aside{
+    margin-bottom: 20px;
+    border-left: 1px solid grey;
+    border-bottom: 1px solid grey;
+}
+.aside ul{
+    margin-left: 30px;
+}
+.aside ul li{
+    padding: 3px;
+}
+.aside a{
+    color: black;
+}
+.aside a:hover{
+    text-decoration: underline;
+    color: deepskyblue;
+}
+.copyright{
+    background-image: url("../img/navbg.png");
+    margin-bottom: 5px;
+    color: whitesmoke;
+    padding: 3px 0 10px 10px;
+}

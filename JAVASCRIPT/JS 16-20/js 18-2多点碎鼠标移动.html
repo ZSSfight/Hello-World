@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>多点随鼠标移动</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 20px;
+            height: 20px;
+            background-color: deepskyblue;
+            position: absolute;
+            border-radius: 50%;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var arr = document.getElementsByTagName("div");
+            document.onmousemove = function(ev){
+                var e = ev || window.event;
+                for(var i = arr.length - 1; i > 0; i--) {
+                    arr[i].style.left = arr[i - 1].offsetLeft + "px";
+                    arr[i].style.top = arr[i - 1].offsetTop + "px";
+                }
+                arr[0].style.left = e.clientX + "px";
+                arr[0].style.top = e.clientY + "px";
+            }
+        }
+    </script>
+</head>
+<body>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+</body>
+</html>

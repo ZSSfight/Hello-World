@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    color: deepskyblue;
+}
+.wrapper{
+    width: 960px;
+    height: 610px;
+    margin: 0 auto;
+    border: 1px solid grey;
+    overflow: hidden;
+}
+h1{
+    font-size: 37px;
+    font-weight: normal;
+    text-align: center;
+    background: #eeeeee;
+    padding: 10px;
+}
+li{
+    margin-left: 20px;
+    line-height: 1.5em;
+}
+.left,.right{
+    float: left;
+    width: 200px;
+    height: 500px;
+    background: #eeeeee url("../img/grey-shadow-top.gif") repeat-x;
+}
+h4{
+    font-size: 17px;
+    padding: 10px;
+}
+.main{
+    float: left;
+    width: 560px;
+    background: white url("../img/white-shadow-top.gif") repeat-x;
+}
+h3{
+    font-size: 23px;
+    padding: 10px;
+}
+p{
+    text-indent: 2em;
+    line-height: 1.5em;
+    padding: 0 10px;
+    margin: 10px 0;
+}
+.foot{
+    float: left;
+    width: 960px;
+    background-color: grey;
+    font-size: 15px;
+    padding: 11px;
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>：valid和：invalid</title>
+    <style>
+        label{
+            background-color: antiquewhite;
+        }
+        input{
+            background-color: blue;
+        }
+        input:valid{
+            border:3px green solid;
+        }
+        input:invalid{
+            border:3px red solid;
+        }
+    </style>
+</head>
+<body>
+<form>
+    <label>邮箱：<input type="email" placeholder="请输入正确格式的邮箱！"></label>
+    <br><br>
+    <button type="submit">提交</button>
+</form>
+</body>
+</html>

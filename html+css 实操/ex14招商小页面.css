@@ -1,0 +1,124 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+li{
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+body{
+    background: url("../img/eximg/bg.gif") no-repeat 53% top;
+
+}
+.wrap{
+    background: url("../img/eximg/bg.gif") center top;
+    margin: 0 auto;
+    width: 1500px;
+    position: relative;
+    /*overflow: hidden;*/
+}
+.logo{
+    position: absolute;
+    left: 300px;
+}
+.nav1{
+    background: url("../img/eximg/main_menu_bg.gif") repeat-x;
+    width: 980px;
+    position: absolute;
+    left: 270px;
+    top: 70px;
+}
+.nav1 ul{
+    margin-left: 40px;
+}
+.nav1 ul li{
+    float: left;
+    padding: 5px 25px;
+    border-right: 1px solid black;
+}
+.nav1 ul li a{
+    color: whitesmoke;
+    font-weight: bold;
+}
+.nav1 ul li a:hover{
+    color: yellow;
+}
+.nav2 {
+    background: url("../img/eximg/main_line.jpg") repeat-x;
+    width: 980px;
+    position: absolute;
+    left: 270px;
+    top: 105px;
+}
+.nav2 ul li{
+    float: left;
+    font-size: 13px;
+    color: lightgrey;
+    padding: 5px 10px;
+    border-right: 1px solid black;
+}
+.nav2 ul li a:hover{
+    color: black;
+}
+.aside{
+    position: absolute;
+    width: 220px;
+    top: 150px;
+    left: 270px;
+}
+.aside ul li{
+    background: url("../img/eximg/directory_bg_big.gif") repeat-x;
+    padding: 5px 20px;
+    text-indent: 2em;
+    font-size: 12px;
+}
+.aside ul li a:hover{
+    color: red;
+}
+.main{
+    border: 1px solid black;
+    width: 750px;
+    position: absolute;
+    top: 150px;
+    left: 500px;
+    text-indent: 2em;
+}
+.main h2{
+    font-size: 20px;
+    text-indent: 2em;
+    padding: 5px;
+    background: url("../img/eximg/content_bg.jpg") round;
+}
+h4{
+    margin-top: 20px;
+}
+p{
+    padding: 5px;
+    font-size: 15px;
+}
+.footer{
+    overflow: hidden;
+    position: absolute;
+    width: 980px;
+    top: 880px;
+    left: 270px;
+    background: url("../img/eximg/bottom_bg.gif") repeat-x;
+}
+.footer ul{
+    margin-left: 150px;
+}
+.footer ul li{
+    float: left;
+    border-right: 1px solid whitesmoke;
+    padding: 5px 10px;
+}
+.footer a{
+    color: whitesmoke;
+    font-size: 12px;
+}
+.footer a:hover{
+    color: yellow;
+}

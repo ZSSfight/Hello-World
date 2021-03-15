@@ -1,0 +1,76 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>鱼C-零基础入门学习Web（Html5+Css3）（课后作业）</title>
+    <style>
+        body {
+            font-family: Arial;
+            font-size: 14px;
+            line-height: 180%;
+            padding-top: 20px;
+        }
+
+        table {
+            width: 666px;
+            border-top: 1pt solid #C1DAD7;
+            border-left: 1pt solid #C1DAD7;
+            margin: 0 auto;
+        }
+        table th{
+            background-color: #0066CC;
+            color: #fff;
+            font-weight:bold;
+        }
+
+        td {
+            padding: 5px 10px;
+            border-right: 1pt solid #C1DAD7;
+            border-bottom: 1pt solid #C1DAD7;
+            text-align: center;
+        }
+
+        /* odd 标识奇数行，even 标识偶数行 */
+        tr:nth-of-type(odd) {
+            background: #c6f9f7
+        }
+
+        /* 鼠标悬停后表格背景颜色 */
+        tr:hover {
+            background: #E0F0F0;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <tr>
+        <th>表头1</th>
+        <th>表头2</th>
+        <th>表头3</th>
+        <th>表头4</th>
+    </tr>
+    <tr>
+        <td>伪表头1</td>
+        <td>伪表头2</td>
+        <td>伪表头3</td>
+        <td>伪表头4</td>
+    </tr>
+
+    <tr>
+        <td colspan="2">表格1</td>
+        <td>表格2</td>
+        <td>表格3</td>
+    </tr>
+    <tr>
+        <td>表格11</td>
+        <td rowspan="2">表格12</td>
+        <td>表格13</td>
+        <td>表格14</td>
+    </tr>
+    <tr>
+        <td>表格21</td>
+        <td>表格22</td>
+        <td>表格23</td>
+    </tr>
+</table>
+</body>
+</html>

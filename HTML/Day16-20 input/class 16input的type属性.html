@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="type,input">
+    <meta name="description" content="submit,reset,button">
+    <meta name="author" content="ZSS">
+    <meta name="viewport" content="width=device-width,inital-scale=1.0">
+    <title>inout元素type属性</title>
+</head>
+<body>
+<form action="welcome.php" method="post">
+    姓名：<input type="text" name="name"><br>
+    邮箱：<input type="text" name="email"><br>
+    <input type="submit" value="提交">
+    <input type="reset" value="重置">
+    <input type="button" value="点我！" onclick="msg()">
+</form>
+<script>
+    function msg(){
+        alert("I love MN");
+    }
+</script>
+</body>
+</html>

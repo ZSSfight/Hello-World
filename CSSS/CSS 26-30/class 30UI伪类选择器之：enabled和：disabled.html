@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>:enabled和:disabled</title>
+    <style>
+        :enabled{
+            outline:1px red solid
+        }
+        :disabled{
+            background-color: green;
+            border:1px black solid;
+        }
+    </style>
+</head>
+<body>
+<form>
+    <label for="enabled">可用：</label>
+    <input type="text" value="快写呀" id="enabled">
+    <br><br>
+    <label for="disabled">禁用：</label>
+    <input type="text" id="disabled" value="不可以写喔" disabled>
+    <br><br>
+    <button>可用按钮：</button>
+    <br><br>
+    <button disabled>不可用按钮：</button>
+</form>
+</body>
+</html>

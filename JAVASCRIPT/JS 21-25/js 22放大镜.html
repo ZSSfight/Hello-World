@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>放大镜</title>
+    <style>
+        #small{
+            width: 480px;
+            height: 660px;
+            top: 100px;
+            left: 100px;
+            position: absolute;
+        }
+        #small img{
+            width: 100%;
+            height: 100%;
+        }
+        #mark{
+            width: 130px;
+            height: 130px;
+            background-color: whitesmoke;
+            opacity: 0.5;
+            alpha(opacity=50);
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+        #big{
+            width: 300px;
+            height: 300px;
+            top: 100px;
+            left: 700px;
+            position: absolute;
+            border: 1px solid black;
+            overflow: hidden;
+            display: none;
+        }
+        #big img{
+            width: 960px;
+            height: 1320px;
+            top: 0;
+            left: 0;
+            position: absolute;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var oSmall = document.getElementById('small');
+            var oMark = document.getElementById('mark');
+            var oBig = document.getElementById('big');
+            var bigPic = oBig.getElementsByTagName('img')[0];
+
+            oSmall.onmouseover = function () {
+                oMark.style.display = 'block';
+                oBig.style.display = 'block';
+            }
+            oSmall.onmouseout = function () {
+                oMark.style.display = 'none';
+                oBig.style.display = 'none';
+            }
+            oSmall.onmousemove = function (ev) {
+                var e = ev || window.event;
+                var l = e.clientX - oSmall.offsetLeft - 65;
+                var t = e.clientY - oSmall.offsetTop - 65;
+                if (l <= 0) {
+                    l = 0;
+                }
+                if (l >= 347) {
+                    l = 347;
+                }
+                if (t <= 0) {
+                    t = 0;
+                }
+                if (t >= 550) {
+                    t = 550;
+                }
+
+                oMark.style.left = l + 'px';
+                oMark.style.top = t + 'px';
+
+                bigPic.style.left = l * -2 + 'px';
+                bigPic.style.top = t * -2 + 'px'
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="small">
+    <img src="../../img/缘一.JPG" alt="缘一">
+    <div id="mark"></div>
+</div>
+<div id="big">
+    <img src="../../img/缘一.JPG" alt="缘一">
+</div>
+</body>
+</html>

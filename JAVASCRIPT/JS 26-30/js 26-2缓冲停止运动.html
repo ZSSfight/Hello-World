@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>缓冲停止运动</title>
+    <style>
+        #btn1{
+
+        }
+        #div1{
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            background-color: #3bd6ff;
+            left: 0;
+            top: 200px;
+        }
+    </style>
+    <script>
+        window.onload =function(){
+            var oBtn = document.getElementById('btn1');
+            var div1 = document.getElementById('div1');
+            oBtn.onclick = function (){
+                startMove(900);
+            }
+        }
+        var timer = null;
+        function startMove(target){
+            var oDiv = document.getElementById('div1');
+            clearInterval(timer);
+            timer = setInterval(function(){
+                var speed = (target - oDiv.offsetLeft) / 8;
+                speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+                if(target == oDiv.offsetLeft){
+                    clearInterval(timer);
+                }else{
+                    oDiv.style.left = oDiv.offsetLeft + speed + 'px';
+                }
+            },20)
+        }
+    </script>
+</head>
+<body>
+<button id="btn1">砸瓦鲁多</button>
+<div id="div1"></div>
+</body>
+</html>

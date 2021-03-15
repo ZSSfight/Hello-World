@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>阻止默认行为和超链接</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #menu{
+            width: 150px;
+            height: 150px;
+            background-color: deepskyblue;
+            display: none;
+            position: absolute;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            document.oncontextmenu = function(){
+                return false;
+            }
+            var oMenu = document.getElementById("menu");
+            document.onmousedown = function (ev){
+                var e = ev || window.event;
+                if(e.button == 2){
+                    oMenu.style.display = 'block';
+                    oMenu.style.left = e.clientX + 'px';
+                    oMenu.style.top = e.clientY + 'px';
+                }else{
+                    oMenu.style.display = 'none';
+                }
+            }
+
+        }
+    </script>
+</head>
+<body>
+<div id="menu">
+    <ul>
+        <li>菜单1</li>
+        <li>菜单2</li>
+        <li>菜单3</li>
+    </ul>
+</div>
+</body>
+</html>

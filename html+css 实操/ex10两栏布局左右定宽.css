@@ -1,0 +1,18 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    width: 100%;
+    overflow: hidden;
+}
+.left{
+    float: left;
+    width: 30%;
+    background-color: pink;
+}
+.right{
+    float: left;
+    width: 70%;
+    background-color: deepskyblue;
+}

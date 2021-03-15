@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>英汉词典</title>
+    <style>
+        #div1{
+            width: 700px;
+            height: 500px;
+            margin: 100px auto;
+            background-color: lightgreen;
+
+        }
+        #word{
+            width: 400px;
+            height: 40px;
+            margin-left: 150px;
+            margin-top: 50px;
+            line-height: 40px;
+        }
+        #desc{
+            width: 400px;
+            height: 40px;
+            margin-left: 150px;
+            line-height: 40px;
+            background-color: whitesmoke;
+            margin-top: 40px;
+        }
+    </style>
+    <script src="demo.js"></script>
+    <script>
+        //将字符串通过换行进行分隔
+        var arr = word.split('\n');
+        let map = new Map();
+        for(var i = 0; i < arr.length-1; i+=2){
+            map.set(arr[i].substring(1),arr[i+1].substring(6));
+        }
+
+        window.onload = function (){
+            var oWord = document.getElementById('word');
+            var oDesc = document.getElementById('desc');
+            oWord.onkeyup = function (){
+                var value = map.get(this.value);
+                if(value){
+                    oDesc.innerHTML = value;
+                }else{
+                    oDesc.innerHTML = '查无此词';
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="div1">
+    <input type="text" id="word" placeholder="请输入单词"/>
+    <div id="desc"></div>
+</div>
+</body>
+</html>

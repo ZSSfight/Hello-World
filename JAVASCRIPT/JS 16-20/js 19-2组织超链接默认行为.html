@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>阻止超链接默认行为</title>
+    <script>
+        window.onload = function (){
+            var a1 = document.getElementById('a1');
+            // a1.onclick = function (){
+            //     return confirm('是否打开？');
+            // }
+
+            a1.onclick = function (ev){
+                var e = ev || window.event;
+                preDef(e);
+                alert('后续操作');
+            }
+        }
+
+
+        function preDef(e){
+            if(e.preventDefault()){
+                e.preventDefault();
+            }else{
+                window.event.returnValue = false;
+            }
+        }
+    </script>
+</head>
+<body>
+<a id="a1" href="https://www.baidu.com/?tn=62095104_19_oem_dg">百度</a>
+</body>
+</html>
