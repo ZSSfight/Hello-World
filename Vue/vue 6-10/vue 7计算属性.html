@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>计算属性</title>
+    <script src='../vue.js'></script>
+</head>
+<body>
+    <div id="box">
+        <input type="text" v-model='myText'>
+        <ul>
+            <li v-for='data in getMyDatalist'>
+                {{data}}
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el:'#box',
+            data:{
+                datalist:['aaa','bbb','ccc','ddd','add','cee','eee'],
+                myText:'',
+            },
+            computed:{
+                getMyDatalist(){
+                    return this.datalist.filter(item=>item.indexOf(this.myText)>-1)
+                }
+            },
+        })
+    </script>
+</body>
+</html>

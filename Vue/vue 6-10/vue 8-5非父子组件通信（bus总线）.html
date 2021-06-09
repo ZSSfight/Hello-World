@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>非父子组件通信bus</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="box">
+        <wechatauthor></wechatauthor>
+        <wechatuser></wechatuser>
+    </div>
+
+    <script>
+        var bus = new Vue();   //空Vue实例，即中央事件总线
+
+        Vue.component('wechatauthor',{
+            template:`<div style='background:blue;width:400px'>
+                我是wechat作者
+                <input type='text' ref='mytext'>
+                <button @click='handleClick'>发布</button>
+                </div>`,
+                methods: {
+                    handleClick(){
+                        bus.$emit('wechatmessage',this.$refs.mytext.value)
+                    }
+                },
+        })
+
+        Vue.component('wechatuser',{
+            template:`<div style='background:lightblue;width:400px'>
+                我是一名wechat使用者
+                </div>`,
+                mounted() {
+                    bus.$on('wechatmessage',(data)=>{
+                        console.log('收到推送了',data)
+                    })
+                    console.log('生命周期--当前dom节点创建好后 就调用')
+                }
+        })
+
+        new Vue({
+            el:'#box',
+        })
+    </script>
+</body>
+</html>

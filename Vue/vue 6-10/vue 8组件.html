@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>组件</title>
+    <script src='../vue.js'></script>
+</head>
+<body>
+    <div id='box'>
+        <navbar></navbar>
+    </div>
+
+    <script>
+        Vue.component('navbar',{
+            template:`
+                <div>
+                    <button @click='handleBack'>返回</button>
+                    navbar
+                    <button>主页</button>
+                </div>
+            `,
+            methods:{
+                handleBack(){
+                    console.log("back")
+                }
+            },
+        })
+        
+        new Vue({
+            el:'#box',
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>子传父</title>
+    <script src='../vue.js'></script>	
+</head>
+<body>
+    <div id="box">
+        父组件
+        <child @myevent='handleEvent($event)'></child>
+    </div>
+
+    <script>
+        Vue.component('child',{
+            template:`<div>
+                child组件
+                <button @click='payMoney()'>click</button>
+                </div>`,
+
+                data(){
+                    return{childname:100}
+                },
+
+                methods:{
+                    payMoney(){
+                        this.$emit('myevent',this.childname)     //分发 事件
+                    }
+                }
+        })
+
+        new Vue({
+            el:'#box',
+            methods:{
+                handleEvent(ev){
+                    console.log('父组件已收到钱',ev)
+                }
+            }
+        })
+    </script>
+</body>
+</html>

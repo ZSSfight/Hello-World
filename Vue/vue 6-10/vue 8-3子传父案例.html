@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>子传父案例</title>
+    <script src='../vue.js'></script>
+</head>
+<body>
+    <div id="box">
+        <navbar @myevent='handleEvent'></navbar>
+        <sidebar v-show='isShow'></sidebar>
+    </div>
+
+    <script>
+        Vue.component('navbar',{
+            template:`<div>
+                navbar
+                <button @click='handleClick'>navbar-button-click</button>
+                </div>`,
+                methods:{
+                    handleClick(){
+                        this.$emit('myevent');
+                    }
+                }
+        })
+
+        Vue.component('sidebar',{
+            template:`<div style='background:deepskyblue;width:700px;line-height:30px;'>
+                    <ul>
+                        <li>qmn</li>
+                        <li>zss</li>
+                    </ul>
+                </div>`
+        })
+
+        new Vue({
+            el:'#box',
+            data:{
+                isShow:false
+            },
+            methods: {
+                handleEvent(){
+                    this.isShow = !this.isShow
+                }
+            },
+        })
+    </script>
+</body>
+</html>

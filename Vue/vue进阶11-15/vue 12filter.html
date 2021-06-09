@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>filter</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="box">
+        <ul>
+            <li v-for="data in datalist" :key="data.id">
+                <h3>{{data.name}}</h3>
+                <img :src="data.img | zsspath">
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        Vue.filter("zsspath",function(data){
+            return data.replace("w.h","128.180")
+        })
+         
+        new Vue({
+            el:"#box",
+            data:{
+                datalist:[]
+            },
+            mounted() {
+                axios.get("test.json").then(res=>{
+                    console.log(res.data);
+                    this.datalist = res.data.movieList;
+                })
+            },
+        })
+    </script>
+</body>
+</html>

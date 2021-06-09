@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-model双向绑定</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="box">
+        <input type="text" v-model='myText'>
+        <br>
+        <textarea name="" id="" cols="30" rows="10" v-model='myText'></textarea>
+        <br>
+        <input type="checkbox" v-model='isChecked'>记住用户名
+        <br>
+        <input type='checkbox' v-model='checkGroup' value='swim'>游泳
+        <input type='checkbox' v-model='checkGroup' value='ski'>滑雪
+        <input type='checkbox' v-model='checkGroup' value='running'>长跑
+        {{checkGroup}}
+        <br>
+        <input type='radio' v-model='picked' value='php'>php
+        <input type='radio' v-model='picked' value='js'>js
+        <input type='radio' v-model='picked' value='java'>java
+        {{picked}}
+    </div>
+    <script>
+        var vm = new Vue({
+            el:'#box',
+            data:{
+                myText:'',
+                isChecked:true,
+                checkGroup:[],
+                picked:'',
+            },
+        })
+    </script>
+</body>
+</html>

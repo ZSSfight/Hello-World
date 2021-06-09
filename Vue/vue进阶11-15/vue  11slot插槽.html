@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slot插槽</title>
+    <script src='../vue.js'></script>
+</head>
+<body>
+    <div id="box">
+        <navbar>
+            <button @click="isShow=!isShow" slot="a">navbar-button</button>
+            <div slot="b">zss and qmn</div>
+        </navbar>
+        <sidebar v-show="isShow"></sidebar>
+    </div>
+    <script>
+        Vue.component("navbar",{
+            template:`<div>
+                <slot name="a"></slot>
+                navbar
+                <slot name="b"></slot>
+                </div>`,
+        })
+
+        Vue.component("sidebar",{
+            template:`<div>
+                sidebar
+                <li>111</li>
+                <li>222</li>
+                <li>333</li>
+                </div>`,
+        })
+
+        new Vue({
+            el:"#box",
+            data:{
+                isShow:false
+            },
+        })
+    </script>
+</body>
+</html>

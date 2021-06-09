@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>点击、键盘事件</title>
+    <script src="../vue.js"></script>
+</head>
+<body>
+    <div id="box">
+        <ul @click.self='handleUlClick()'>
+            <li @click.stop='handleLiClick($event)'>1111</li>
+            <li @click.once='handleLiClick()'>2222</li>
+            <li @click='handleLiClick'>33333</li>
+        </ul>
+
+        <a href="http://www.baidu.com" @click.prevent='handleChangePage'>跳转页面</a>
+        <br>
+        <input type="text" @keyup.enter='handleKeyUp($event)'>
+    </div>
+    
+    <script>
+        var vm = new Vue({
+            el:'#box',
+            data:{
+
+            },
+            methods:{
+                handleUlClick(){
+                    console.log("Ul click")
+                },
+                handleLiClick(){
+                    console.log('Li click')
+                },
+                handleChangePage(){
+                    console.log("handleChangePage")
+                },
+                handleKeyUp(){
+                    console.log('执行toDoList 添加动作')
+                },
+            }
+        })
+    </script>
+</body>
+</html>

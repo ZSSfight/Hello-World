@@ -1,0 +1,29 @@
+2021/05/26 23:43:15 [emerg] 8#1480: bind() to 0.0.0.0:80 failed (10013: An attempt was made to access a socket in a way forbidden by its access permissions)
+2021/05/30 18:58:29 [emerg] 11840#8276: bind() to 0.0.0.0:80 failed (10013: An attempt was made to access a socket in a way forbidden by its access permissions)
+2021/05/30 19:25:49 [error] 11284#6344: *1 directory index of "D:\webcreate\Study\Vue\nginx-1.20.1/dist/" is forbidden, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost"
+2021/05/30 19:25:49 [error] 11284#6344: *1 CreateFile() "D:\webcreate\Study\Vue\nginx-1.20.1/dist/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost", referrer: "http://localhost/"
+2021/05/30 19:27:46 [error] 11284#6344: *4 directory index of "D:\webcreate\Study\Vue\nginx-1.20.1/dist/" is forbidden, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost"
+2021/05/30 19:36:21 [error] 11284#6344: *7 directory index of "D:\webcreate\Study\Vue\nginx-1.20.1/dist/" is forbidden, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost"
+2021/05/30 19:40:27 [error] 11284#6344: *10 directory index of "D:\webcreate\Study\Vue\nginx-1.20.1/dist/" is forbidden, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost"
+2021/05/30 19:41:06 [error] 11284#6344: *10 directory index of "D:\webcreate\Study\Vue\nginx-1.20.1/dist/" is forbidden, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost"
+2021/05/30 19:41:09 [error] 11284#6344: *10 directory index of "D:\webcreate\Study\Vue\nginx-1.20.1/dist/" is forbidden, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost"
+2021/05/30 19:44:44 [error] 11284#6344: *13 directory index of "D:\webcreate\Study\Vue\nginx-1.20.1/dist/" is forbidden, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost"
+2021/05/30 19:48:19 [error] 10700#12908: *1 directory index of "D:\webcreate\Study\Vue\nginx-1.20.1/dist/" is forbidden, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost"
+2021/05/30 19:50:10 [error] 7500#8244: *1 directory index of "D:\webcreate\Study\Vue\nginx-1.20.1/dist/" is forbidden, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost"
+2021/05/30 19:55:12 [error] 7500#8244: *3 directory index of "D:\webcreate\Study\Vue\nginx-1.20.1/dist/" is forbidden, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost"
+2021/05/30 20:18:59 [error] 10868#14176: *1 directory index of "D:\webcreate\Study\Vue\nginx-1.20.1/dist/" is forbidden, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost"
+2021/05/30 20:19:40 [error] 10868#14176: *1 directory index of "D:\webcreate\Study\Vue\nginx-1.20.1/dist/" is forbidden, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost"
+2021/05/30 20:19:59 [error] 10868#14176: *1 directory index of "D:\webcreate\Study\Vue\nginx-1.20.1/dist/" is forbidden, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost"
+2021/05/30 20:20:00 [error] 10868#14176: *1 directory index of "D:\webcreate\Study\Vue\nginx-1.20.1/dist/" is forbidden, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost"
+2021/05/30 20:23:35 [notice] 13668#8768: signal process started
+2021/05/30 20:26:46 [notice] 4344#14064: signal process started
+2021/05/30 20:26:50 [error] 11096#8656: *6 CreateFile() "D:\webcreate\Study\Vue\nginx-1.20.1/dist/class1.html/class1.html" failed (3: The system cannot find the path specified), client: 127.0.0.1, server: localhost, request: "GET /class1.html HTTP/1.1", host: "localhost", referrer: "http://localhost/"
+2021/05/30 20:26:58 [error] 11096#8656: *6 CreateFile() "D:\webcreate\Study\Vue\nginx-1.20.1/dist/class1.html/class1.html" failed (3: The system cannot find the path specified), client: 127.0.0.1, server: localhost, request: "GET /class1.html HTTP/1.1", host: "localhost", referrer: "http://localhost/"
+2021/05/30 20:28:24 [error] 11096#8656: *9 CreateFile() "D:\webcreate\Study\Vue\nginx-1.20.1/dist/class1.html/class1.html" failed (3: The system cannot find the path specified), client: 127.0.0.1, server: localhost, request: "GET /class1.html HTTP/1.1", host: "localhost", referrer: "http://localhost/"
+2021/05/30 20:28:39 [notice] 2036#12168: signal process started
+2021/05/30 20:28:42 [error] 11096#8656: *10 CreateFile() "D:\webcreate\Study\Vue\nginx-1.20.1/dist/class1.html/class1.html" failed (3: The system cannot find the path specified), client: 127.0.0.1, server: localhost, request: "GET /class1.html HTTP/1.1", host: "localhost", referrer: "http://localhost/"
+2021/05/30 20:29:01 [notice] 10176#10496: signal process started
+2021/05/30 20:29:03 [error] 11096#8656: *11 CreateFile() "D:\webcreate\Study\Vue\nginx-1.20.1/dist/class1.html/class1.html" failed (3: The system cannot find the path specified), client: 127.0.0.1, server: localhost, request: "GET /class1.html HTTP/1.1", host: "localhost", referrer: "http://localhost/"
+2021/05/30 21:42:09 [notice] 6696#13860: signal process started
+2021/05/30 21:42:09 [error] 6696#13860: OpenEvent("Global\ngx_reload_17756") failed (2: The system cannot find the file specified)
+2021/05/30 21:48:54 [notice] 8444#15728: signal process started

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>可复用的过渡</title>
+    <script src="../vue.js"></script>
+    <style>
+        .left-enter-active{
+            animation: left .5s;
+        }
+        .left-leave-active{
+            animation: left .5s reverse;
+        }
+        @keyframes left{
+            0%{
+                opacity: 0;
+                transform: translateX(-100%);
+            }
+            100%{
+                opacity: 1;
+                transform: translateX(0px);
+            }
+        }
+
+        .right-enter-active{
+            animation: right .5s;
+        }
+        .right.leave-active{
+            animation: right .5s reverse;
+        }
+        @keyframes right{
+            0%{
+                opacity: 0;
+                transform: translateX(100%);
+            }
+            100%{
+                opacity: 1;
+                transform: translateX(0px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <navbar @myevent="change"></navbar>
+        <sidebar v-show="isShow" direction="left">
+            <div style="background:yellow;width:100px">
+                <ul>
+                    <li>好友</li>
+                    <li>信息</li>
+                    <li>设置</li>
+                </ul>
+            </div>
+        </sidebar>
+    </div>
+
+    <script>
+        Vue.component("navbar",{
+            template:`<div style="background:blue;width:100px">
+                导航栏<button @click="handleClick">click</button>
+            </div>`,
+            methods:{
+                handleClick(){
+                    this.$emit("myevent")
+                }
+            },
+        })
+
+        Vue.component("sidebar",{
+            props:["direction"],
+            template:`<transition :name="direction">
+                <slot></slot>
+            </transition>`,
+        })
+
+        new Vue({
+            el:"#box",
+            data:{
+                isShow:false
+            },
+            methods:{
+                change(){
+                    this.isShow = !this.isShow
+                }
+            },
+        })
+    </script>
+</body>
+</html>
